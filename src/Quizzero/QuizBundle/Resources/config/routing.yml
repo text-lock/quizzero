@@ -1,0 +1,23 @@
+QuizzeroQuizBundle_homepage:
+    path:     /
+    defaults: { _controller: "QuizzeroQuizBundle:Page:index" }
+    requirements:
+         methods:  GET
+QuizzeroQuizBundle_quiz_show:
+    path:  /quiz/{id}
+    defaults: { _controller: "QuizzeroQuizBundle:Quiz:showFront" }
+    requirements:
+        methods:  GET
+        id: \d+
+
+QuizzeroQuizBundle_user_index:
+    path:     /user/
+    defaults: { _controller: "QuizzeroQuizBundle:User:show" }
+    requirements:
+         methods:  GET
+
+QuizzeroQuizBundle_user_result_show:
+    path:     /user/result/{id}
+    defaults: { _controller: "QuizzeroQuizBundle:Result:show" }
+    requirements:
+         methods:  GET

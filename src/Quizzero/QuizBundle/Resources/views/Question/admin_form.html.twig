@@ -1,0 +1,23 @@
+{% block question_form %}<br><br>
+<h2>Question for {{question.quiz}} quiz</h2>
+	    {{ form_start(question_edit_form) }}
+	            {{ form_widget(question_edit_form) }}
+	            {% if  question.image %}
+		            <h4> Attached image:</h4>
+		            <img src="/img/upload/{{ question.image }}" width = "200"><br>
+		            <input type="hidden" name= "old_image" value="{{ question.image }}" />
+		        {% endif %}
+	            <div class="variant_block">
+	            <h3>Variants:</h3>
+	                <input id="question_variant">
+	                <label id="ad_question_variant">Add</label>
+	                <div id = "question_variants"></div>
+	            </div>
+
+	            <input type="hidden" name= "old_image" value="{{ question.image }}" />
+	            <input type="submit" value="Ok" />
+	            
+	    {{ form_end(question_edit_form) }}
+
+{% endblock %}
+<script src="{{ asset('js/admin_common.js') }}"></script>

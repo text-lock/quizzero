@@ -1,0 +1,34 @@
+{# src/Quizzero/QuizBundle/Resources/views/Page/index.html.twig #}
+{% extends 'QuizzeroQuizBundle::layout.html.twig' %}
+
+{% block body %}
+    {% for quiz in quizzes %}
+        <div class="post-preview">
+
+         <div class="col-md-2">
+         {% if quiz.image %}
+            <img src="{{ asset(['img/upload/', quiz.image]|join) }}" width="100" />
+        {% endif %}
+        </div>
+        <div class="col-md-10">
+            <a href="{{ path('QuizzeroQuizBundle_quiz_show', { 'id': quiz.id }) }}">
+                <h2 class="post-title">
+                    {{ quiz.title }}
+                </h2>
+                <h3 class="post-subtitle">
+                    {{ quiz.body(100) }}
+                </h3>
+            </a>
+            <p class="post-meta">
+               
+                Posted on {{ quiz.createdAt|date('l, F j, Y') }}</p>
+            </div>
+        </div>
+        
+            
+    {% else %}
+        <div class="post-preview">
+            <p>There are no quiz entries for Quizzero</p>
+        </div>
+    {% endfor %}
+{% endblock %}

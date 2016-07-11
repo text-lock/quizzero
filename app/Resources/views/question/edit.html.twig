@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Question edit</h1>
+    {% block question_form %}
+        {{ form_start(question_edit_form) }}
+            {{ form_widget(question_edit_form) }}
+            <input type="submit" value="Edit" />
+        {{ form_end(question_edit_form) }}
+
+    {% endblock %}
+    
+{% endblock %}

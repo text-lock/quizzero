@@ -1,0 +1,57 @@
+{% extends 'QuizzeroQuizBundle::layout.html.twig' %}
+
+
+{% block body %}
+	{% include 'QuizzeroQuizBundle::user.layout.html.twig' %}
+	<div class="col-md-12">.........................</div>
+    <h1>Quiz edit</h1>
+
+    {{ form_start(quiz_edit_form) }}
+        {{ form_widget(quiz_edit_form, {'attr': {'novalidate': 'novalidate'}}) }}
+        
+        {% if  quiz.image %}
+            <h4> Attached image:</h4>
+            <img src="/img/upload/{{ quiz.image }}" width = "200"><br>
+            <input type="hidden" name= "old_image" value="{{ quiz.image }}" />
+        {% endif %}
+        
+        <input type="submit" value="Save quiz" />
+    {{ form_end(quiz_edit_form) }}
+    <h3>Quiz questions: </h3>
+   
+    
+
+    
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Body</th>
+                <th>Created/Updated</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for question in questions %}
+            <tr>
+              
+                
+                <td>{{ question.body }}</td>
+                
+
+                <td>{% if question.createdat %}{{ question.createdat|date('Y-m-d H:i:s') }}{% endif %}/{% if question.updatedat %}{{ question.updatedat|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <a href="{{ path('questionlink_edit', { 'id': question.id }) }}">edit</a> / 
+                    <a href="{{ path('questionlink_delete', { 'id': question.id }) }}">delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+    
+ <center><a href="{{ path('questionlink_new') }}">Create new question</a></center>
+
+
+{% endblock %}
