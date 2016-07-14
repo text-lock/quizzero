@@ -55,13 +55,6 @@ class Result
      */
     private $answer;
 
-     /**
-     * @var string
-     *
-     * @ORM\Column(name="correct", type="string")
-     */
-    private $correct;
-
     /**
      * @var bool
      *
