@@ -78,9 +78,11 @@ class Quiz
      */
     public function __construct()
     {
+        $this->results = new ArrayCollection();
         $this->questions = new ArrayCollection();
         $this->setCreatedAt(new \DateTime());
         $this->setUpdatedAt(new \DateTime());
+        
     }
 
   
@@ -281,5 +283,16 @@ class Quiz
     public function getResults()
     {
         return $this->results;
+    }
+
+    /**
+     * Set results
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function setResults($results = null)
+    {
+        $this->results = $results;
+        return $this;
     }
 }

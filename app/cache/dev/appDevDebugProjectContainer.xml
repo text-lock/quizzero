@@ -889,26 +889,12 @@
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.pt_BR.yml</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.pt_BR.yml</argument>
           </argument>
-          <argument key="ro" type="collection">
-            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.ro.xlf</argument>
-            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.ro.xlf</argument>
-            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.ro.xlf</argument>
-            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.ro.yml</argument>
-            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.ro.yml</argument>
-          </argument>
           <argument key="ru" type="collection">
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.ru.xlf</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.ru.xlf</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.ru.xlf</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.ru.yml</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.ru.yml</argument>
-          </argument>
-          <argument key="sk" type="collection">
-            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.sk.xlf</argument>
-            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.sk.xlf</argument>
-            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.sk.xlf</argument>
-            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.sk.yml</argument>
-            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.sk.yml</argument>
           </argument>
           <argument key="sl" type="collection">
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.sl.xlf</argument>
@@ -917,20 +903,10 @@
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.sl.yml</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.sl.yml</argument>
           </argument>
-          <argument key="sq" type="collection">
-            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.sq.xlf</argument>
-          </argument>
           <argument key="sr_Cyrl" type="collection">
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.sr_Cyrl.xlf</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.sr_Cyrl.xlf</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.sr_Cyrl.xlf</argument>
-          </argument>
-          <argument key="sr_Latn" type="collection">
-            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.sr_Latn.xlf</argument>
-            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.sr_Latn.xlf</argument>
-            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.sr_Latn.xlf</argument>
-            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.sr_Latn.yml</argument>
-            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.sr_Latn.yml</argument>
           </argument>
           <argument key="sv" type="collection">
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.sv.xlf</argument>
@@ -939,36 +915,17 @@
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.sv.yml</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.sv.yml</argument>
           </argument>
-          <argument key="th" type="collection">
-            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.th.xlf</argument>
-            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.th.xlf</argument>
-            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.th.yml</argument>
-            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.th.yml</argument>
-          </argument>
           <argument key="tr" type="collection">
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.tr.xlf</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.tr.xlf</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.tr.yml</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.tr.yml</argument>
           </argument>
-          <argument key="uk" type="collection">
-            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.uk.xlf</argument>
-            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.uk.xlf</argument>
-            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.uk.yml</argument>
-            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.uk.yml</argument>
-          </argument>
           <argument key="vi" type="collection">
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.vi.xlf</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.vi.xlf</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.vi.yml</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.vi.yml</argument>
-          </argument>
-          <argument key="zh_CN" type="collection">
-            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.zh_CN.xlf</argument>
-            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.zh_CN.xlf</argument>
-            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.zh_CN.xlf</argument>
-            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.zh_CN.yml</argument>
-            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.zh_CN.yml</argument>
           </argument>
           <argument key="zh_TW" type="collection">
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.zh_TW.xlf</argument>
@@ -1069,15 +1026,15 @@
           <argument key="fi" type="collection">
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.fi.xlf</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.fi.xlf</argument>
-            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.fi.yml</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.fi.yml</argument>
+            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.fi.yml</argument>
           </argument>
           <argument key="fr" type="collection">
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.fr.xlf</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.fr.xlf</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.fr.xlf</argument>
-            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.fr.yml</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.fr.yml</argument>
+            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.fr.yml</argument>
           </argument>
           <argument key="gl" type="collection">
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.gl.xlf</argument>
@@ -1088,22 +1045,22 @@
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.he.xlf</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.he.xlf</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.he.xlf</argument>
-            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.he.yml</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.he.yml</argument>
+            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.he.yml</argument>
           </argument>
           <argument key="hr" type="collection">
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.hr.xlf</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.hr.xlf</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.hr.xlf</argument>
-            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.hr.yml</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.hr.yml</argument>
+            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.hr.yml</argument>
           </argument>
           <argument key="hu" type="collection">
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.hu.xlf</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.hu.xlf</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.hu.xlf</argument>
-            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.hu.yml</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.hu.yml</argument>
+            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.hu.yml</argument>
           </argument>
           <argument key="hy" type="collection">
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.hy.xlf</argument>
@@ -1113,22 +1070,22 @@
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.id.xlf</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.id.xlf</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.id.xlf</argument>
-            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.id.yml</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.id.yml</argument>
+            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.id.yml</argument>
           </argument>
           <argument key="it" type="collection">
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.it.xlf</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.it.xlf</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.it.xlf</argument>
-            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.it.yml</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.it.yml</argument>
+            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.it.yml</argument>
           </argument>
           <argument key="ja" type="collection">
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.ja.xlf</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.ja.xlf</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.ja.xlf</argument>
-            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.ja.yml</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.ja.yml</argument>
+            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.ja.yml</argument>
           </argument>
           <argument key="lb" type="collection">
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.lb.xlf</argument>
@@ -1175,6 +1132,49 @@
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.pt.yml</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.pt.yml</argument>
           </argument>
+          <argument key="ro" type="collection">
+            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.ro.xlf</argument>
+            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.ro.xlf</argument>
+            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.ro.xlf</argument>
+            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.ro.yml</argument>
+            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.ro.yml</argument>
+          </argument>
+          <argument key="sk" type="collection">
+            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.sk.xlf</argument>
+            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.sk.xlf</argument>
+            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.sk.xlf</argument>
+            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.sk.yml</argument>
+            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.sk.yml</argument>
+          </argument>
+          <argument key="sq" type="collection">
+            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.sq.xlf</argument>
+          </argument>
+          <argument key="sr_Latn" type="collection">
+            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.sr_Latn.xlf</argument>
+            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.sr_Latn.xlf</argument>
+            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.sr_Latn.xlf</argument>
+            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.sr_Latn.yml</argument>
+            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.sr_Latn.yml</argument>
+          </argument>
+          <argument key="th" type="collection">
+            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.th.xlf</argument>
+            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.th.xlf</argument>
+            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.th.yml</argument>
+            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.th.yml</argument>
+          </argument>
+          <argument key="uk" type="collection">
+            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.uk.xlf</argument>
+            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.uk.xlf</argument>
+            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.uk.yml</argument>
+            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.uk.yml</argument>
+          </argument>
+          <argument key="zh_CN" type="collection">
+            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Validator/Resources/translations/validators.zh_CN.xlf</argument>
+            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.zh_CN.xlf</argument>
+            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.zh_CN.xlf</argument>
+            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.zh_CN.yml</argument>
+            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.zh_CN.yml</argument>
+          </argument>
           <argument key="lv" type="collection">
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Form/Resources/translations/validators.lv.xlf</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.lv.yml</argument>
@@ -1186,13 +1186,13 @@
           <argument key="ua" type="collection">
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Exception/../Resources/translations/security.ua.xlf</argument>
           </argument>
-          <argument key="ky" type="collection">
-            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.ky.yml</argument>
-            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.ky.yml</argument>
-          </argument>
           <argument key="nb" type="collection">
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.nb.yml</argument>
             <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.nb.yml</argument>
+          </argument>
+          <argument key="ky" type="collection">
+            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/validators.ky.yml</argument>
+            <argument>/home/admin/wk/php/site1.test/quizzero/vendor/friendsofsymfony/user-bundle/Resources/translations/FOSUserBundle.ky.yml</argument>
           </argument>
         </argument>
       </argument>
@@ -2214,7 +2214,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>578609f8d976d5.70254416</argument>
+            <argument>578c7ef131bee6.20134140</argument>
           </service>
         </argument>
       </argument>
@@ -2525,7 +2525,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>578609f8d976d5.70254416</argument>
+            <argument>578c7ef131bee6.20134140</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>

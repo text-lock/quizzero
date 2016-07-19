@@ -375,4 +375,15 @@ class Quiz extends \Quizzero\QuizBundle\Entity\Quiz implements \Doctrine\ORM\Pro
         return parent::getResults();
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    public function setResults($results = NULL)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setResults', [$results]);
+
+        return parent::setResults($results);
+    }
+
 }

@@ -8,8 +8,13 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Quizzero\QuizBundle\Entity\Question;
 use Quizzero\QuizBundle\Entity\Quiz;
-use Quizzero\QuizBundle\Form\QuestionType;
-use Quizzero\QuizBundle\Form\QuizType;
+use Quizzero\QuizBundle\Form\AdminQuestionType;
+use Quizzero\QuizBundle\Form\AdminQuizType;
+use Symfony\Component\Serializer\Serializer;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
+
 
 /**
  * Question controller.
@@ -28,8 +33,13 @@ class QuestionController extends Controller
      */
     public function newAction(Request $request)
     {
+        $encoders = array(new JsonEncoder());
+        $normalizers = array(new ObjectNormalizer());
+
+        $serializer = new Serializer($normalizers, $encoders);
+
         $question = new Question();
-        $QuestionEditForm = $this->createForm('Quizzero\QuizBundle\Form\QuestionType', $question);
+        $QuestionEditForm = $this->createForm('Quizzero\QuizBundle\Form\AdminQuestionType', $question);
         $QuestionEditForm->handleRequest($request);
 
         if ($QuestionEditForm->isSubmitted() && $QuestionEditForm->isValid()) {
@@ -47,6 +57,7 @@ class QuestionController extends Controller
               $question->setImage($fileName);
             }
 
+            
             $em = $this->getDoctrine()->getManager();
             $em->persist($question);
             $em->flush();
@@ -70,7 +81,7 @@ class QuestionController extends Controller
     public function editAction(Request $request, Question $question)
     {
         
-        $QuestionEditForm = $this->createForm('Quizzero\QuizBundle\Form\QuestionType', $question);
+        $QuestionEditForm = $this->createForm('Quizzero\QuizBundle\Form\AdminQuestionType', $question);
         $QuestionEditForm->handleRequest($request);
 
         $old_image = $this->get('request')->request->get('old_image');
@@ -96,15 +107,13 @@ class QuestionController extends Controller
               
             }
 
-            // Update the 'brochure' property to store the PDF file name
-            // instead of its contents
             $question->setImage($fileName);
             $quiz = $question -> getQuiz();
-
+            
             $em->persist($question);
             $em->flush();
-            $quiz = $question -> getQuiz();
-
+            $quiz = $question -> getQuiz();       
+            
             return $this->redirectToRoute('quizlink_edit', array('id' => $quiz->getId()));
         }
 

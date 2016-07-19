@@ -19,8 +19,8 @@
     {% for result in results  %}  
         <tr {% if result.isCorrect == false %} class="alert-danger" {% else %} class="alert-success" {% endif %}>
         <td>{{result.question.body}}</td>
-        <td>{{result.answer|replace(';', " ") }}</td>
-        <td>{{ result.question.correct|replace(';', " ") }}</td>
+        <td>{{result.answer }}</td>
+        <td>{{ result.question.variates}}</td>
         <td>{% if result.isCorrect == false %} false {% else %} true {% endif %}</td>      
 
         </tr>  

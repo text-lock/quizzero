@@ -4,6 +4,7 @@
 namespace Quizzero\QuizBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Result
@@ -39,19 +40,20 @@ class Result
      /**
      * @ORM\ManyToOne(targetEntity="Quiz", inversedBy="results")
      * @ORM\JoinColumn(name="quiz_id", referencedColumnName="id")
+     * @Assert\NotBlank(message="Missed quiz assign")
      */
     private $quiz;
 
     /**
      * @ORM\ManyToOne(targetEntity="Question", inversedBy="results")
      * @ORM\JoinColumn(name="question_id", referencedColumnName="id")
+     * @Assert\NotBlank(message="Missed question assign")
      */
     private $question;
 
     /**
-     * @var string
      *
-     * @ORM\Column(name="answer", type="string")
+     * @ORM\Column(name="answer", type="string",  nullable=true)
      */
     private $answer;
 
@@ -106,6 +108,7 @@ class Result
     public function getAnswer()
     {
         return $this->answer;
+        //return array($this->answer);
     }
 
     /**

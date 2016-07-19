@@ -41,12 +41,13 @@ class ChoicesToValuesTransformer implements DataTransformerInterface
      */
     public function transform($array)
     {
+        
         if (null === $array) {
             return array();
         }
 
         if (!is_array($array)) {
-            throw new TransformationFailedException('Expected an array.');
+            throw new TransformationFailedException('Expected an array.'. $array);
         }
 
         return $this->choiceList->getValuesForChoices($array);

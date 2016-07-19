@@ -2,6 +2,12 @@ input[type="text"], textarea{
 	max-width: 100%;
 	min-width: 100%;
 }
+.hidden{
+	display: none;
+}
+hr{
+	margin-bottom: 20px;
+}
 
 .slide{
 	display: none;
@@ -28,7 +34,13 @@ input[type="submit"]{
 }
 
 label{
-	
-	margin-top:30px;
+	margin-left: 5px;
+}
 
+#quiz_results,[name="quiz"] .required{
+	display:none;
+}
+
+form[name="quiz"] label{
+width: 97%;
 }

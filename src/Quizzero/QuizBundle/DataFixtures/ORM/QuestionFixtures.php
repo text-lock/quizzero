@@ -30,7 +30,9 @@ class QuestionFixtures extends AbstractFixture implements OrderedFixtureInterfac
         $question->setType('radio');
         $question->setBody('Does sun set in summer at Kolsky region?');
         $question->setImage('upload/polar_day.jpg');
-        $question->setVariates('yes;no;differently');
+       // $question->setVariates('{yes;no;differently}');
+        $question->setVariates('[{"value":"yes","isCorrect":true},{"value":"no","isCorrect":false},{"value":"differently","isCorrect":false}]');
+        
         $question->setCorrect('yes');
         $question->setQuiz($manager->merge($this->getReference('quiz-1')));
         $manager->persist($question);
@@ -39,7 +41,7 @@ class QuestionFixtures extends AbstractFixture implements OrderedFixtureInterfac
         $question->setType('checkbox');
         $question->setBody('Snow in Murmansk could fall in:');
         $question->setImage('upload/snow.jpg');
-        $question->setVariates('Jan;Feb;March;Apr;May;Jun;Jul;Aug;Sept;Oct;Nov;Dec');
+        $question->setVariates('[{"value":"Jan","isCorrect":true},{"value":"Feb","isCorrect":true},{"value":"March","isCorrect":true},{"value":"Apr","isCorrect":true},{"value":"May","isCorrect":true},{"value":"Jun","isCorrect":true},{"value":"Jul","isCorrect":true},{"value":"Aug","isCorrect":true},{"value":"Sept","isCorrect":true},{"value":"Oct","isCorrect":true},{"value":"Nov","isCorrect":true},{"value":"Dec","isCorrect":true}]');
         $question->setCorrect('Jan;Feb;March;Apr;May;Jun;Jul;Aug;Sept;Oct;Nov;Dec');
         $question->setQuiz($manager->merge($this->getReference('quiz-1')));
         $manager->persist($question);
@@ -60,7 +62,8 @@ class QuestionFixtures extends AbstractFixture implements OrderedFixtureInterfac
         $question->setType('radio');
         $question->setBody('The hiest mountain in Khibiny');
         $question->setImage('upload/khibiny.jpg');
-        $question->setVariates('Vortkeuayv;Eagle Nest;South Chorrgor');
+        //$question->setVariates('Vortkeuayv;Eagle Nest;South Chorrgor');
+        $question->setVariates('[{"value":"Vortkeuayv","isCorrect":false},{"value":"Eagle Nest","isCorrect":true},{"value":"South Chorrgor","isCorrect":false}]');
         $question->setCorrect('Eagle Nest');
         $question->setQuiz($manager->merge($this->getReference('quiz-2')));
         $manager->persist($question);
@@ -69,7 +72,8 @@ class QuestionFixtures extends AbstractFixture implements OrderedFixtureInterfac
         $question->setType('checkbox');
         $question->setBody('Lovozero tundra is a');
         $question->setImage('upload/lovozero.jpg');
-        $question->setVariates('Massif;Swamp;Plateau;Tundra');
+       // $question->setVariates('Massif;Swamp;Plateau;Tundra');
+        $question->setVariates('[{"value":"Massif","isCorrect":true},{"value":"Swamp","isCorrect":false},{"value":"Plateau","isCorrect":true},{"value":"Tundra","isCorrect":true}]');
         $question->setCorrect('Massif;Plateau;Tundra');
         $question->setQuiz($manager->merge($this->getReference('quiz-2')));
         $manager->persist($question);
@@ -78,7 +82,8 @@ class QuestionFixtures extends AbstractFixture implements OrderedFixtureInterfac
         $question->setType('radio');
         $question->setBody('The most famous place name of the Kola Peninsula');
         $question->setImage('upload/kurwa.jpg');
-        $question->setVariates('Kuiva;Huntsman;Husky;Shaposhvueskyaur');
+        //$question->setVariates('Kuiva;Huntsman;Husky;Shaposhvueskyaur');
+        $question->setVariates('[{"value":"Kuiva","isCorrect":true},{"value":"Huntsman","isCorrect":false},{"value":"Husky","isCorrect":false},{"value":"Shaposhvueskyaur","isCorrect":false}');
         $question->setCorrect('Kuiva');
         $question->setQuiz($manager->merge($this->getReference('quiz-2')));
         $manager->persist($question);

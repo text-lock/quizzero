@@ -43,19 +43,15 @@ class Question
     protected $image;
     
     /**
-     * @ORM\Column(type="string", nullable=true)
-     */
-    protected $correct;
-
-    /**
-     * @ORM\Column(type="string", nullable=true)
+     * @ORM\Column(type="text", nullable=true)
+     *
      */
     protected $variates;
 
     /**
      * @ORM\ManyToOne(targetEntity="Quiz", inversedBy="questions")
-     * @ORM\JoinColumn(name="quiz_id", referencedColumnName="id", nullable=true, onDelete="SET NULL")
-     *
+     * @ORM\JoinColumn(name="quiz_id", referencedColumnName="id", onDelete="SET NULL")
+     * @Assert\NotBlank(message="Missed field Title")
      */
     protected $quiz;
 
@@ -166,30 +162,7 @@ class Question
         return $this->image;
     }
 
-    /**
-     * Set correct
-     *
-     * @param string $correct
-     *
-     * @return Question
-     */
-    public function setCorrect($correct)
-    {
-        $this->correct = $correct;
-
-        return $this;
-    }
-
-    /**
-     * Get correct
-     *
-     * @return string
-     */
-    public function getCorrect()
-    {
-        return $this->correct;
-    }
-
+    
     /**
      * Set variates
      *

@@ -1,135 +1,113 @@
-var variants = {};  //A variants
-var correct = {};	//Correct answer list
-var question_type ='';
-
 jQuery(document).ready(function($) {
 
-	$('#question_Type').change(function(){ //when Question type was changed
-		
-		question_type = $(this).val();
-		
-		$('#question_correct').val('');
+	var json_str = $("#admin_question_variates").val();
+	var variants = [];
+ 	var question_type = $('#admin_question_Type').val();
+ 	var question_variant = $("#question_variant");
+ 	var admin_question_variates = $("#admin_question_variates");
+ 	
+	
+	check_status(question_type);
 
-		if( (question_type == "textarea") || (question_type == "text")){
-			variants = {};
-			correct = {};
-			$('.variant_block').hide();
-			$('#question_correct').parent().show();
-			$('#question_variant').val('');
-			$('#question_variants').html('');
-			
-		
-		}else{
-			
-			$('.variant_block').show();
-			$('#question_correct').parent().hide();
+	$("#admin_question_Type").change(function(){
+		question_type = $(this).val();	
+		check_status(question_type);
+	});
+
+	$( '[name="admin_question"]' ).submit(function( event ) {
+		if (question_type == "textarea" || question_type == "text"){
+			variants = [{value: question_variant.val(), isCorrect: true}];
+			variants_init(variants);
 		}
-		variants = {};
-		correct = {};
-		init_variants(variants,question_type);
-	})
-
-	$('#ad_question_variant').ready(function(){
-		question_type = $('#question_Type').val();
-
-		if( (question_type == "textarea") || (question_type == "text")){
-			
-			$('.variant_block').hide();
-			$('#question_correct').parent().show();
-			$('#question_variant').val('');
-			$('#question_variants').html('');
-
-			$('#question_variates').val(Object.keys(variants).join(';'));
-			$('#question_correct').val(Object.keys(correct).join(';'));
-		}else{
-			
-			$('.variant_block').show();
-			$('#question_correct').parent().hide();
-
-			$('#question_correct').val(Object.keys(correct).join(';'));
-			
-		}
-
-		variants = {};
-		correct = {};
-
-		var var_string = $('#question_variates').val().split(';');
-		var corr_string = $('#question_correct').val().split(';');
-
-		if (typeof var_string == 'undefined')	var_string = '';
-		if (typeof corr_string == 'undefined')	corr_string = '';
-
-		variants = new variant(var_string);
-		correct = new variant(corr_string);
-		
-		init_variants(variants,question_type);
+	   // event.preventDefault();
 	});
 
 
-	$('#ad_question_variant').click(function(){
-		var newvar = $('#question_variant').val();
-		variants[newvar] = newvar;
-		init_variants(variants,question_type);
-		$('#question_variant').val('');
+function check_status(question_type){
+
+	if($("#admin_question_variates").val() == ''){
+		variants = [{value:"",isCorrect: true}];
+	}else
+		variants = JSON.parse(admin_question_variates.val());
+
+	if (question_type == 'radio'){
+		for (item in variants) 
+			variants[item].isCorrect = false;		
+	}
+
+	if (question_type == 'radio' || question_type == 'checkbox'){ 
+		$("#ad_question_variant").show();
+		$("#variant_block").show();
+		$("#admin_question_correct").hide();
+		$('[for="admin_question_correct"]').hide();
+		$(".variant_block h3").html('Variants');
+		if($("#admin_question_variates").val() == '[{"isCorrect":true,"value":""}]'){
+			admin_question_variates.val('');
+			variants = [];
+		}
+
+	}else{
+		question_variant.val(variants[0].value);
+		$("#ad_question_variant").hide();
+		$("#admin_question_correct").show();
+		$('[for="admin_question_correct"]').show();
+		$(".variant_block h3").html('Correct');
+	}
+
+	$("#ad_question_variant").click(function(){
+		var temp = {};
+		temp.isCorrect = false;
+		temp.value = question_variant.val();
+		if (temp.value != ""){
+			variants.push(temp);
+			variants_init(variants);
+			question_variant.val('');
+		}
 	})
 
-});
+	variants_init(variants);
 
-function init_variants(variants,question_type){
+}
+function variants_init(variants){
+	admin_question_variates.val(JSON.stringify(variants));
+
+	console.log(admin_question_variates.val());
 	$('#question_variants').html('');
 
-	$.each(variants, function(index, value) {	
-		var ans_status ='';
-		if(value == correct[value]){
-			ans_status = ':: isCorrect';
+	if (question_type == 'radio' || question_type == 'checkbox')
+		for (var item in variants) {
+			var ans_status = '';		
+		  	if(variants[item].isCorrect == true)
+				ans_status = ':: isCorrect';
+				
+	  		$('#question_variants').append('<div class="alert alert-info alert-dismissible" role="alert" val="'+item +'" hint="click to set correct">'+
+											  '<button type="button" class="close" data-dismiss="alert" aria-label="Close">'+
+											  		'<span aria-hidden="true" val="'+item+'">&times;</span>'+
+											  '</button>'+variants[item].value+'<label>'+ans_status+'</label></div>');
 		}
-		$('#question_variants').append('<div class="alert alert-info alert-dismissible" role="alert" val="'+value+'" hint="click to set correct">'+
-										  '<button type="button" class="close" data-dismiss="alert" aria-label="Close">'+
-										  		'<span aria-hidden="true" val="'+value+'">&times;</span>'+
-										  '</button>'+value+'<label>'+ans_status+'</label></div>');
-	});
-
 
 	$('[aria-hidden]').click(function(){
 		var getval = $(this).attr('val');
-		delete variants[getval];
-		delete correct[getval];
+		delete variants[getval];	
+		variants = variants.filter(Boolean);
+		variants_init(variants);
 	});
 
-	$('[role="alert"]').click(function(){
-		if (question_type == 'radio'){
-			correct ={}
-			$("#question_correct").val($(this).attr('val'));
-			$('[role="alert"]').find('label').html('');
-			$(this).find('label').html(':: isCorrect');
+	$('[role="alert"]').click(function(){		
+		var getval = $(this).attr('val');
+		var temp = variants[getval].isCorrect;
+		if(question_type == 'radio'){
+			for (item in variants) 
+				variants[item].isCorrect = false;
 
-			correct[$(this).attr('val')] = $(this).attr('val');
-
-			
-
-		}else if(question_type == 'checkbox'){
-
-			if($(this).find('label').html() ==':: isCorrect'){
-				$(this).find('label').html('');
-				delete correct[$(this).attr('val')];
-			}
-			else{
-				$(this).find('label').html(':: isCorrect');
-				correct[$(this).attr('val')] = $(this).attr('val');
-			}
+			variants[getval].isCorrect = true;
 		}
-
-		$('#question_variates').val(Object.keys(variants).join(';'));
-		$('#question_correct').val(Object.keys(correct).join(';'));
-		
-	})
-	
+		if(question_type == 'checkbox'){ 
+			if (variants[getval].isCorrect == true) variants[getval].isCorrect = false;	
+				else variants[getval].isCorrect = true;
+		}
+		variants_init(variants);
+	});
 
 }
-
-function variant(arr) {
-		
-		for (var i = 0; i < arr.length; ++i)
-    		this[arr[i]] = arr[i];		
-	}
-
+});

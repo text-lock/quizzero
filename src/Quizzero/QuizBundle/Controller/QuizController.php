@@ -2,7 +2,6 @@
 
 namespace Quizzero\QuizBundle\Controller;
 
-
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -10,11 +9,14 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
+use Quizzero\QuizBundle\Form\AdminQuizType;
+use Quizzero\QuizBundle\Form\AdminQuestionType;
+use Quizzero\QuizBundle\Form\QuizType;
+use Quizzero\QuizBundle\Form\ResultType;
+use Symfony\Component\Serializer\Serializer;
 use Quizzero\QuizBundle\Entity\Quiz;
 use Quizzero\QuizBundle\Entity\Question;
-use Quizzero\QuizBundle\Form\QuizType;
-use Quizzero\QuizBundle\Form\QuestionType;
-
+use Quizzero\QuizBundle\Entity\Result;
 
 /**
  * Quiz controller.
@@ -31,28 +33,48 @@ class QuizController extends Controller
 
         $quiz = $em->getRepository('QuizzeroQuizBundle:Quiz')->find($id);
 
+        if (!$quiz) throw $this->createNotFoundException('Unable to find Quiz.');
         
-
-        $form = $this->createFormBuilder()
-            ->add('quiz_id', HiddenType::class, array('data' => $id))
-            ->add('save', SubmitType::class, array('label' => 'Get your result'))
-            ->getForm();
-
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            
-            $results = $request->request->get('result');
-
-            return $this->redirectToRoute('result_new', ['request' => $request], 307);  //Write quiz results to DB
-         
-        }
-
-        if (!$quiz) {
-            throw $this->createNotFoundException('Unable to find Quiz.');
-        }
         $questions = $em->getRepository('QuizzeroQuizBundle:Question')
                    ->getQuestionsForQuiz($quiz->getId());
+        $quiz->setResults();
+
+        foreach ($questions as $question)
+        {
+            $result = new Result();
+          
+            $variants = json_decode($question->getVariates());
+            $vari = $question->getType();
+
+            for ($i = 0; $i < count($variants); ++$i){
+                $tmp = get_object_vars($variants[$i]);
+                $vari .= ";".$tmp['value'];
+            }
+
+            if ($question->getType() == 'checkbox')
+                $vari = explode(";", $vari);
+
+            $result->setQuiz($quiz);
+            $result->setQuestion($question);
+            $result->setAnswer($vari);  
+            $quiz->addResult($result);
+        }
+        
+        $form = $this->createForm('Quizzero\QuizBundle\Form\QuizType', $quiz)
+          ->add('save', SubmitType::class, array('label' => 'Get your result'))
+          ->add('quiz', HiddenType::class, array(
+                "mapped" => false, 'data' => $quiz->getId()));
+        $form->handleRequest($request);
+
+        
+        
+
+
+       if ($form->isSubmitted()) {
+
+          return $this->redirectToRoute('result_new', ['request' => $request], 307);  //Write quiz results to DB
+         
+       }
 
         return $this->render('QuizzeroQuizBundle:Quiz:show.html.twig', array(
             'quiz'      => $quiz,
@@ -88,7 +110,7 @@ class QuizController extends Controller
     public function newAction(Request $request)
     {
         $quiz = new Quiz();
-        $form = $this->createForm('Quizzero\QuizBundle\Form\QuizType', $quiz);
+        $form = $this->createForm('Quizzero\QuizBundle\Form\AdminQuizType', $quiz);
         $form->handleRequest($request);
 
 
@@ -105,10 +127,10 @@ class QuizController extends Controller
                   $this->getParameter('images_directory'),
                   $fileName
               );
-  			      
+              
               $quiz->setImage($fileName);
             }
-			
+      
             $em = $this->getDoctrine()->getManager();
             $em->persist($quiz);
             $em->flush();
@@ -150,13 +172,13 @@ class QuizController extends Controller
     public function editAction(Request $request, Quiz $quiz, Question $question = NULL)
     {
      
-        $QuizEditForm = $this->createForm('Quizzero\QuizBundle\Form\QuizType', $quiz);
+        $QuizEditForm = $this->createForm('Quizzero\QuizBundle\Form\AdminQuizType', $quiz);
         $QuizEditForm->handleRequest($request);
 
         if (!$question) $question = new Question;
 
 
-        $QuestionEditForm = $this->createForm('Quizzero\QuizBundle\Form\QuestionType', $question);
+        $QuestionEditForm = $this->createForm('Quizzero\QuizBundle\Form\AdminQuestionType', $question);
         $QuestionEditForm->handleRequest($request);
 
         $em = $this->getDoctrine()->getManager();
