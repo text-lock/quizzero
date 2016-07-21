@@ -64,10 +64,10 @@ class Question extends \Quizzero\QuizBundle\Entity\Question implements \Doctrine
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', 'id', 'type', 'body', 'image', 'correct', 'variates', 'quiz', 'results', 'created_at', 'updated_at'];
+            return ['__isInitialized__', 'id', 'type', 'body', 'image', 'variates', 'quiz', 'results', 'created_at', 'updated_at'];
         }
 
-        return ['__isInitialized__', 'id', 'type', 'body', 'image', 'correct', 'variates', 'quiz', 'results', 'created_at', 'updated_at'];
+        return ['__isInitialized__', 'id', 'type', 'body', 'image', 'variates', 'quiz', 'results', 'created_at', 'updated_at'];
     }
 
     /**
@@ -263,28 +263,6 @@ class Question extends \Quizzero\QuizBundle\Entity\Question implements \Doctrine
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getImage', []);
 
         return parent::getImage();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setCorrect($correct)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setCorrect', [$correct]);
-
-        return parent::setCorrect($correct);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getCorrect()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCorrect', []);
-
-        return parent::getCorrect();
     }
 
     /**

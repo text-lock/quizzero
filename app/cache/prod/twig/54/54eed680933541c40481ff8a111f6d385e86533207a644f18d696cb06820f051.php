@@ -28,7 +28,11 @@ class __TwigTemplate_3a066bcf8e5dbbb7a7fd5a74e13ab2567d517613af1a64d75f7c44123fc
     public function block_body($context, array $blocks = array())
     {
         // line 4
-        echo "    <h1>Quiz list</h1>
+        echo "\t";
+        $this->loadTemplate("QuizzeroQuizBundle::user.layout.html.twig", "QuizzeroQuizBundle:Quiz:admin_index.html.twig", 4)->display($context);
+        // line 5
+        echo "\t<div class=\"col-md-12\">...............................................</div>
+    <h1>Quiz list</h1>
 
     <table class=\"table\">
         <thead>
@@ -44,32 +48,32 @@ class __TwigTemplate_3a066bcf8e5dbbb7a7fd5a74e13ab2567d517613af1a64d75f7c44123fc
         </thead>
         <tbody>
         ";
-        // line 19
+        // line 21
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["quizzes"]) ? $context["quizzes"] : null));
         foreach ($context['_seq'] as $context["_key"] => $context["quiz"]) {
-            // line 20
+            // line 22
             echo "            <tr>
                 <td><a href=\"";
-            // line 21
+            // line 23
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("quizlink_show", array("id" => $this->getAttribute($context["quiz"], "id", array()))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["quiz"], "id", array()), "html", null, true);
             echo "</a></td>
                 <td>";
-            // line 22
+            // line 24
             echo twig_escape_filter($this->env, $this->getAttribute($context["quiz"], "title", array()), "html", null, true);
             echo "</td>
                 
                 
                 <td>";
-            // line 25
+            // line 27
             if ($this->getAttribute($context["quiz"], "createdat", array())) {
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["quiz"], "createdat", array()), "Y-m-d H:i:s"), "html", null, true);
             }
             echo "</td>
                 <td>";
-            // line 26
+            // line 28
             if ($this->getAttribute($context["quiz"], "updatedat", array())) {
                 echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute($context["quiz"], "updatedat", array()), "Y-m-d H:i:s"), "html", null, true);
             }
@@ -79,9 +83,14 @@ class __TwigTemplate_3a066bcf8e5dbbb7a7fd5a74e13ab2567d517613af1a64d75f7c44123fc
                         
                         <li>
                             <a href=\"";
-            // line 31
+            // line 33
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("quizlink_edit", array("id" => $this->getAttribute($context["quiz"], "id", array()))), "html", null, true);
             echo "\">edit</a>
+                            <a href=\"";
+            // line 34
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("quizlink_delete", array("id" => $this->getAttribute($context["quiz"], "id", array()))), "html", null, true);
+            echo "\">delete</a>
+                            
                         </li>
                     </ul>
                 </td>
@@ -91,14 +100,14 @@ class __TwigTemplate_3a066bcf8e5dbbb7a7fd5a74e13ab2567d517613af1a64d75f7c44123fc
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['quiz'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 37
+        // line 41
         echo "        </tbody>
     </table>
 
     <ul>
         <li>
             <a href=\"";
-        // line 42
+        // line 46
         echo $this->env->getExtension('routing')->getPath("quizlink_new");
         echo "\">Create a new entry</a>
         </li>
@@ -118,12 +127,14 @@ class __TwigTemplate_3a066bcf8e5dbbb7a7fd5a74e13ab2567d517613af1a64d75f7c44123fc
 
     public function getDebugInfo()
     {
-        return array (  102 => 42,  95 => 37,  83 => 31,  73 => 26,  67 => 25,  61 => 22,  55 => 21,  52 => 20,  48 => 19,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  111 => 46,  104 => 41,  91 => 34,  87 => 33,  77 => 28,  71 => 27,  65 => 24,  59 => 23,  56 => 22,  52 => 21,  34 => 5,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
 /* */
 /* {% block body %}*/
+/* 	{% include 'QuizzeroQuizBundle::user.layout.html.twig' %}*/
+/* 	<div class="col-md-12">...............................................</div>*/
 /*     <h1>Quiz list</h1>*/
 /* */
 /*     <table class="table">*/
@@ -152,6 +163,8 @@ class __TwigTemplate_3a066bcf8e5dbbb7a7fd5a74e13ab2567d517613af1a64d75f7c44123fc
 /*                         */
 /*                         <li>*/
 /*                             <a href="{{ path('quizlink_edit', { 'id': quiz.id }) }}">edit</a>*/
+/*                             <a href="{{ path('quizlink_delete', { 'id': quiz.id }) }}">delete</a>*/
+/*                             */
 /*                         </li>*/
 /*                     </ul>*/
 /*                 </td>*/

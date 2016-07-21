@@ -15,8 +15,8 @@ class __TwigTemplate_547802b7c823dc094da3185d7f51b415dedad3b699ddbd98b6f4063fcc3
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_057891a9a4c394d7461c62581fa92587c64d209c400f82d5163b30d800fb943d = $this->env->getExtension("native_profiler");
-        $__internal_057891a9a4c394d7461c62581fa92587c64d209c400f82d5163b30d800fb943d->enter($__internal_057891a9a4c394d7461c62581fa92587c64d209c400f82d5163b30d800fb943d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "QuizzeroQuizBundle::user.layout.html.twig"));
+        $__internal_46224e45061456555c360c12e4666d91dcccea5a23768ae5de21ab870eb99129 = $this->env->getExtension("native_profiler");
+        $__internal_46224e45061456555c360c12e4666d91dcccea5a23768ae5de21ab870eb99129->enter($__internal_46224e45061456555c360c12e4666d91dcccea5a23768ae5de21ab870eb99129_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "QuizzeroQuizBundle::user.layout.html.twig"));
 
         // line 1
         echo "<div class=\"col-md-3\"><a href=\"/admin/quiz\">Manage quiz</a></div>
@@ -25,7 +25,7 @@ class __TwigTemplate_547802b7c823dc094da3185d7f51b415dedad3b699ddbd98b6f4063fcc3
 <div class=\"col-md-3\"><a href=\"/logout\">Logout</a></div>
 ";
         
-        $__internal_057891a9a4c394d7461c62581fa92587c64d209c400f82d5163b30d800fb943d->leave($__internal_057891a9a4c394d7461c62581fa92587c64d209c400f82d5163b30d800fb943d_prof);
+        $__internal_46224e45061456555c360c12e4666d91dcccea5a23768ae5de21ab870eb99129->leave($__internal_46224e45061456555c360c12e4666d91dcccea5a23768ae5de21ab870eb99129_prof);
 
     }
 

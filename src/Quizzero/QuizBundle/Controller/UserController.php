@@ -34,17 +34,9 @@ class UserController extends Controller
         $results = $em-> getRepository('QuizzeroQuizBundle:Result')
                       -> getUserResults($user);
                 
-
         return $this-> render('QuizzeroQuizBundle:User:show.html.twig', array(
               'results'=> $results,
-
               ));
-       
-    
     }
-
-
-    
-
 }
 

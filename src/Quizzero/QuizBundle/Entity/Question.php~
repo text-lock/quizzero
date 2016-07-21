@@ -162,30 +162,7 @@ class Question
         return $this->image;
     }
 
-    /**
-     * Set correct
-     *
-     * @param string $correct
-     *
-     * @return Question
-     */
-    public function setCorrect($correct)
-    {
-        $this->correct = $correct;
-
-        return $this;
-    }
-
-    /**
-     * Get correct
-     *
-     * @return string
-     */
-    public function getCorrect()
-    {
-        return $this->correct;
-    }
-
+    
     /**
      * Set variates
      *

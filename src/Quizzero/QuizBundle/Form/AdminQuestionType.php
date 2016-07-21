@@ -20,22 +20,20 @@ class AdminQuestionType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-
-   
             ->add('Type', ChoiceType::class, array(
                 'choices' => array(
                     'textarea' => 'textarea',
                     'text' => 'text',
                     'radio'   => 'radio',
-                    'checkbox' => 'checkbox'
+                    'checkbox' => 'checkbox',
                 ),
                 'choices_as_values' => true,
-                'preferred_choices' => array('muppets', 'arr')
+                'preferred_choices' => array('muppets', 'arr', )
     
             ))
             ->add('quiz')
             ->add('body')
-            ->add('image', 'file', array( 'data_class' => null))
+            ->add('image', 'file', array( 'data_class' => null, ))
             ->add('variates', HiddenType::class);
             
     }
@@ -46,10 +44,10 @@ class AdminQuestionType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Quizzero\QuizBundle\Entity\Question'
+            'data_class' => 'Quizzero\QuizBundle\Entity\Question', 
         ));
          $resolver->setDefaults(array(
-             'attr'=>array('novalidate'=>'novalidate')
+             'attr'=>array('novalidate'=>'novalidate', )
          ));
 
     }

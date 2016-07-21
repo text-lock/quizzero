@@ -30,10 +30,7 @@ function check_status(question_type){
 	}else
 		variants = JSON.parse(admin_question_variates.val());
 
-	if (question_type == 'radio'){
-		for (item in variants) 
-			variants[item].isCorrect = false;		
-	}
+	
 
 	if (question_type == 'radio' || question_type == 'checkbox'){ 
 		$("#ad_question_variant").show();
@@ -41,7 +38,7 @@ function check_status(question_type){
 		$("#admin_question_correct").hide();
 		$('[for="admin_question_correct"]').hide();
 		$(".variant_block h3").html('Variants');
-		if($("#admin_question_variates").val() == '[{"isCorrect":true,"value":""}]'){
+		if($("#admin_question_variates").val() == '[{"value":"","isCorrect":true}]'){
 			admin_question_variates.val('');
 			variants = [];
 		}

@@ -19,9 +19,7 @@ class AdminQuizType extends AbstractType
         $builder
             ->add('title')
             ->add('body')
-            ->add('image', 'file', array( 'data_class' => null, 'validation_groups' => false,))
-            
-        ;
+            ->add('image', 'file', array( 'data_class' => null, 'required' => false, ));
     }
     
     /**
@@ -30,15 +28,13 @@ class AdminQuizType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Quizzero\QuizBundle\Entity\Quiz'
+            'data_class' => 'Quizzero\QuizBundle\Entity\Quiz', 
         ));
 
-        $resolver->setDefaults(array(
-        'attr'=>array('novalidate'=>'novalidate')
-         ));
+        $resolver->setDefaults(array());
     }
 
-   public function getName()
+    public function getName()
     {
         return 'quiz';
     }

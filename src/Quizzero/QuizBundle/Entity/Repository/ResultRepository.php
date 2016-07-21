@@ -26,20 +26,20 @@ class ResultRepository extends \Doctrine\ORM\EntityRepository
 
     public function getQuizSession()                        //receive quiz results by session
     {
-		  $qb = $this->createQueryBuilder('lq')
+		    $qb = $this->createQueryBuilder('lq')
                    ->select('MAX(lq.quiz_session)');
 
         $quiz_session = $qb->getQuery()
                   ->getSingleScalarResult();  
 
-		  if (!$quiz_session) $quiz_session = 1; else ++$quiz_session;
+		    if (!$quiz_session) $quiz_session = 1; else ++$quiz_session;
 
-		  return $quiz_session;
+		    return $quiz_session;
     }
 
     public function getResultData($quiz_session){               //receive quiz results by session
     
-		$qb = $this->createQueryBuilder('r')
+		    $qb = $this->createQueryBuilder('r')
                    ->select('r')
                    ->where('r.quiz_session = :quiz_session')
                    
@@ -52,13 +52,12 @@ class ResultRepository extends \Doctrine\ORM\EntityRepository
 
    public function getQuizId($quiz_session){
     
-		$qb = $this->createQueryBuilder('q')
+		  $qb = $this->createQueryBuilder('q')
                    ->select('MAX(q.quiz)')
                    ->where('q.quiz_session = :quiz_session')
                    
                    ->setParameter('quiz_session', $quiz_session);
                   
-
         return $qb->getQuery()
                    ->getSingleScalarResult();  
 	
@@ -67,20 +66,14 @@ class ResultRepository extends \Doctrine\ORM\EntityRepository
 
    public function getUserResults($user){
 
-    
-    $qb = $this->createQueryBuilder('rd')
+      $qb = $this->createQueryBuilder('rd')
                    ->select('rd')
                    ->where('rd.user = :user')
                    ->groupBy('rd.quiz_session')
                    ->setParameter('user', $user);
                   
-
         return $qb->getQuery()
-                  
                   ->getResult();
                   
-  
    }
-
-   
 }

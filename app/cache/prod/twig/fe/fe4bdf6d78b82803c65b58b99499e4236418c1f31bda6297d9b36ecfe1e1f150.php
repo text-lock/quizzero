@@ -27,29 +27,34 @@ class __TwigTemplate_df6a5ed05a5258ac8919064e0facfb3d30c9980e9fd4a4a2d89810a8f6a
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 4
+    // line 5
     public function block_header_title($context, array $blocks = array())
     {
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["quiz"]) ? $context["quiz"] : null), "title", array()), "html", null, true);
     }
 
-    // line 5
+    // line 6
     public function block_header_subtitle($context, array $blocks = array())
     {
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["quiz"]) ? $context["quiz"] : null), "body", array()), "html", null, true);
     }
 
-    // line 6
+    // line 7
     public function block_header_image($context, array $blocks = array())
     {
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl(twig_join_filter(array(0 => "img/", 1 => $this->getAttribute((isset($context["quiz"]) ? $context["quiz"] : null), "image", array())))), "html", null, true);
     }
 
-    // line 7
+    // line 8
     public function block_body($context, array $blocks = array())
     {
-        // line 8
-        echo "    <h2 class=\"section-heading\">Quiz result for \"";
+        // line 9
+        echo "    ";
+        $this->loadTemplate("QuizzeroQuizBundle::user.layout.html.twig", "QuizzeroQuizBundle:Result:show.html.twig", 9)->display($context);
+        // line 10
+        echo "    <div class=\"col-md-12\">...............................................</div>
+    <h2 class=\"section-heading\">Quiz result for \"";
+        // line 11
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["quiz"]) ? $context["quiz"] : null), "title", array()), "html", null, true);
         echo "\"</h2>
 
@@ -60,13 +65,13 @@ class __TwigTemplate_df6a5ed05a5258ac8919064e0facfb3d30c9980e9fd4a4a2d89810a8f6a
     </thead>
 
     ";
-        // line 16
+        // line 19
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["results"]) ? $context["results"] : null));
         foreach ($context['_seq'] as $context["_key"] => $context["result"]) {
             echo "  
         <tr ";
-            // line 17
+            // line 20
             if (($this->getAttribute($context["result"], "isCorrect", array()) == false)) {
                 echo " class=\"alert-danger\" ";
             } else {
@@ -74,19 +79,19 @@ class __TwigTemplate_df6a5ed05a5258ac8919064e0facfb3d30c9980e9fd4a4a2d89810a8f6a
             }
             echo ">
         <td>";
-            // line 18
+            // line 21
             echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["result"], "question", array()), "body", array()), "html", null, true);
             echo "</td>
         <td>";
-            // line 19
-            echo twig_escape_filter($this->env, twig_replace_filter($this->getAttribute($context["result"], "answer", array()), ";", " "), "html", null, true);
+            // line 22
+            echo twig_escape_filter($this->env, $this->getAttribute($context["result"], "answer", array()), "html", null, true);
             echo "</td>
         <td>";
-            // line 20
-            echo twig_escape_filter($this->env, twig_replace_filter($this->getAttribute($this->getAttribute($context["result"], "question", array()), "correct", array()), ";", " "), "html", null, true);
+            // line 23
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["result"], "question", array()), "variates", array()), "html", null, true);
             echo "</td>
         <td>";
-            // line 21
+            // line 24
             if (($this->getAttribute($context["result"], "isCorrect", array()) == false)) {
                 echo " false ";
             } else {
@@ -100,7 +105,7 @@ class __TwigTemplate_df6a5ed05a5258ac8919064e0facfb3d30c9980e9fd4a4a2d89810a8f6a
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['result'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 25
+        // line 28
         echo "
 </table>
 ";
@@ -118,16 +123,19 @@ class __TwigTemplate_df6a5ed05a5258ac8919064e0facfb3d30c9980e9fd4a4a2d89810a8f6a
 
     public function getDebugInfo()
     {
-        return array (  104 => 25,  90 => 21,  86 => 20,  82 => 19,  78 => 18,  70 => 17,  64 => 16,  52 => 8,  49 => 7,  43 => 6,  37 => 5,  31 => 4,  11 => 2,);
+        return array (  109 => 28,  95 => 24,  91 => 23,  87 => 22,  83 => 21,  75 => 20,  69 => 19,  58 => 11,  55 => 10,  52 => 9,  49 => 8,  43 => 7,  37 => 6,  31 => 5,  11 => 2,);
     }
 }
 /* {# src/Quizzero/QuizBundle/Resources/views/Result/show.html.twig #}*/
 /* {% extends 'QuizzeroQuizBundle::layout.html.twig' %}*/
 /* */
+/* */
 /* {% block header_title %}{{ quiz.title }}{% endblock %}*/
 /* {% block header_subtitle %}{{ quiz.body }}{% endblock %}*/
 /* {% block header_image %}{{ asset(['img/', quiz.image]|join) }}{% endblock %}*/
 /* {% block body %}*/
+/*     {% include 'QuizzeroQuizBundle::user.layout.html.twig' %}*/
+/*     <div class="col-md-12">...............................................</div>*/
 /*     <h2 class="section-heading">Quiz result for "{{quiz.title}}"</h2>*/
 /* */
 /*     <table class="table table-bordered">*/
@@ -139,8 +147,8 @@ class __TwigTemplate_df6a5ed05a5258ac8919064e0facfb3d30c9980e9fd4a4a2d89810a8f6a
 /*     {% for result in results  %}  */
 /*         <tr {% if result.isCorrect == false %} class="alert-danger" {% else %} class="alert-success" {% endif %}>*/
 /*         <td>{{result.question.body}}</td>*/
-/*         <td>{{result.answer|replace(';', " ") }}</td>*/
-/*         <td>{{ result.question.correct|replace(';', " ") }}</td>*/
+/*         <td>{{result.answer }}</td>*/
+/*         <td>{{ result.question.variates}}</td>*/
 /*         <td>{% if result.isCorrect == false %} false {% else %} true {% endif %}</td>      */
 /* */
 /*         </tr>  */

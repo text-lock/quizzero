@@ -28,6 +28,9 @@ class __TwigTemplate_d583c0f32f35eb6f0cbf0c4376aeb87b697b4d81ab54036a83a8aa9db34
     public function block_body($context, array $blocks = array())
     {
         // line 4
+        echo "\t";
+        $this->loadTemplate("QuizzeroQuizBundle::user.layout.html.twig", "QuizzeroQuizBundle:Quiz:admin_show.html.twig", 4)->display($context);
+        // line 5
         echo "    <h1>Quiz</h1>
 
     <table>
@@ -35,28 +38,28 @@ class __TwigTemplate_d583c0f32f35eb6f0cbf0c4376aeb87b697b4d81ab54036a83a8aa9db34
             <tr>
                 <th>Title</th>
                 <td>";
-        // line 10
+        // line 11
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["quiz"]) ? $context["quiz"] : null), "title", array()), "html", null, true);
         echo "</td>
             </tr>
             <tr>
                 <th>Body</th>
                 <td>";
-        // line 14
+        // line 15
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["quiz"]) ? $context["quiz"] : null), "body", array()), "html", null, true);
         echo "</td>
             </tr>
             <tr>
                 <th>Image</th>
                 <td>";
-        // line 18
+        // line 19
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["quiz"]) ? $context["quiz"] : null), "image", array()), "html", null, true);
         echo "</td>
             </tr>
             <tr>
                 <th>Created_at</th>
                 <td>";
-        // line 22
+        // line 23
         if ($this->getAttribute((isset($context["quiz"]) ? $context["quiz"] : null), "createdat", array())) {
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["quiz"]) ? $context["quiz"] : null), "createdat", array()), "Y-m-d H:i:s"), "html", null, true);
         }
@@ -65,7 +68,7 @@ class __TwigTemplate_d583c0f32f35eb6f0cbf0c4376aeb87b697b4d81ab54036a83a8aa9db34
             <tr>
                 <th>Updated_at</th>
                 <td>";
-        // line 26
+        // line 27
         if ($this->getAttribute((isset($context["quiz"]) ? $context["quiz"] : null), "updatedat", array())) {
             echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->getAttribute((isset($context["quiz"]) ? $context["quiz"] : null), "updatedat", array()), "Y-m-d H:i:s"), "html", null, true);
         }
@@ -77,24 +80,24 @@ class __TwigTemplate_d583c0f32f35eb6f0cbf0c4376aeb87b697b4d81ab54036a83a8aa9db34
     <ul>
         <li>
             <a href=\"";
-        // line 33
+        // line 34
         echo $this->env->getExtension('routing')->getPath("quizlink_index");
         echo "\">Back to the list</a>
         </li>
         <li>
             <a href=\"";
-        // line 36
+        // line 37
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("quizlink_edit", array("id" => $this->getAttribute((isset($context["quiz"]) ? $context["quiz"] : null), "id", array()))), "html", null, true);
         echo "\">Edit</a>
         </li>
         <li>
             ";
-        // line 39
+        // line 40
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : null), 'form_start');
         echo "
                 <input type=\"submit\" value=\"Delete\">
             ";
-        // line 41
+        // line 42
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : null), 'form_end');
         echo "
         </li>
@@ -114,12 +117,13 @@ class __TwigTemplate_d583c0f32f35eb6f0cbf0c4376aeb87b697b4d81ab54036a83a8aa9db34
 
     public function getDebugInfo()
     {
-        return array (  98 => 41,  93 => 39,  87 => 36,  81 => 33,  69 => 26,  60 => 22,  53 => 18,  46 => 14,  39 => 10,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  101 => 42,  96 => 40,  90 => 37,  84 => 34,  72 => 27,  63 => 23,  56 => 19,  49 => 15,  42 => 11,  34 => 5,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
 /* {% extends 'base.html.twig' %}*/
 /* */
 /* {% block body %}*/
+/* 	{% include 'QuizzeroQuizBundle::user.layout.html.twig' %}*/
 /*     <h1>Quiz</h1>*/
 /* */
 /*     <table>*/

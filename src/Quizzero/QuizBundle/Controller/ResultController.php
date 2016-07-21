@@ -47,7 +47,7 @@ class ResultController extends Controller
 
         $user = $this->container->get('security.context')->getToken()->getUser();
         if ($user != 'anon.') $user_id = $user->getId(); else $user = null;
-        //get user_id
+        
         $user = $this->container->get('security.context')->getToken()->getUser();
         
         foreach ($block_results as $result) {
@@ -57,7 +57,7 @@ class ResultController extends Controller
 
             $results = new Result();
             $question_id = $result['question'];
-            if(!isset($result['answer']))   $result['answer'] = '' ;
+            if(!isset($result['answer'])) $result['answer'] = '' ;
             $question = $em->getRepository('QuizzeroQuizBundle:Question')->find($question_id);
 
             $question_type = $question->getType();
@@ -72,11 +72,7 @@ class ResultController extends Controller
 
             sort($correct);
             sort($answer);
-
-           // print_r($correct);
-           // print_r($answer);
-
-
+  
             if(($question_type == 'textarea' and $correct[0] =='') 
                     or ($correct == $answer))
                 $isCorrect = true;
@@ -88,21 +84,23 @@ class ResultController extends Controller
             $results->setQuestion($question);
             $results->setQuizSession($quiz_session);
             $results->setIsCorrect($isCorrect);
-            
+         
             $em->persist($results);
             $em->flush();
         }
+            
         return $this->redirectToRoute('result_show', array('id' => $quiz_session, ));      
     }
 
     /**
-     * Finds and displays a Result entity.
+     * Finds and displays a Result entities.
      *
      * @Route("/{id}", name="result_show")
      * @Method("GET")
      */
     public function showAction(Result $quiz_session)
     {
+        
         $em = $this-> getDoctrine()
                    -> getManager();
         $results = $em-> getRepository('QuizzeroQuizBundle:Result')
@@ -133,14 +131,17 @@ class ResultController extends Controller
                 $correct .= " ".$tmp['value'];
             }
             $question->setVariates($correct);
+
         }
 
         if ($loggeduser == $resultuser)
-          return $this-> render('QuizzeroQuizBundle:Result:show.html.twig', array(
+
+            return $this-> render('QuizzeroQuizBundle:Result:show.html.twig', array(
               'results'=> $results,
               'questions'=> $questions,
-              'quiz'=> $quiz
+              'quiz'=> $quiz,
               ));
+
         else return $this->redirect($this->generateUrl('QuizzeroQuizBundle_homepage'));
 
     

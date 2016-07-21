@@ -245,21 +245,13 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'QuizzeroQuizBundle_quiz_show')), array (  '_controller' => 'Quizzero\\QuizBundle\\Controller\\QuizController::showFrontAction',));
         }
 
-        if (0 === strpos($pathinfo, '/user')) {
-            // QuizzeroQuizBundle_user_index
-            if (rtrim($pathinfo, '/') === '/user') {
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'QuizzeroQuizBundle_user_index');
-                }
-
-                return array (  '_controller' => 'Quizzero\\QuizBundle\\Controller\\UserController::showAction',  '_route' => 'QuizzeroQuizBundle_user_index',);
+        // QuizzeroQuizBundle_user_index
+        if (rtrim($pathinfo, '/') === '/user') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'QuizzeroQuizBundle_user_index');
             }
 
-            // QuizzeroQuizBundle_user_result_show
-            if (0 === strpos($pathinfo, '/user/result') && preg_match('#^/user/result/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'QuizzeroQuizBundle_user_result_show')), array (  '_controller' => 'Quizzero\\QuizBundle\\Controller\\ResultController::showAction',));
-            }
-
+            return array (  '_controller' => 'Quizzero\\QuizBundle\\Controller\\UserController::showAction',  '_route' => 'QuizzeroQuizBundle_user_index',);
         }
 
         if (0 === strpos($pathinfo, '/log')) {

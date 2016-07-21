@@ -42,21 +42,29 @@ class __TwigTemplate_9e46a1e8dcfd4c84137c7fdbc63b953057b69ff94d877cfffd42dd55191
     // line 6
     public function block_header_image($context, array $blocks = array())
     {
-        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl(twig_join_filter(array(0 => "img/upload/", 1 => $this->getAttribute((isset($context["quiz"]) ? $context["quiz"] : null), "image", array())))), "html", null, true);
+        if ($this->getAttribute((isset($context["quiz"]) ? $context["quiz"] : null), "image", array())) {
+            // line 7
+            echo "\t\t";
+            echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl(twig_join_filter(array(0 => "img/upload/", 1 => $this->getAttribute((isset($context["quiz"]) ? $context["quiz"] : null), "image", array())))), "html", null, true);
+            echo "
+\t";
+        } else {
+            // line 8
+            echo "/img/home-bg.jpg";
+        }
     }
 
-    // line 7
+    // line 10
     public function block_body($context, array $blocks = array())
     {
-        // line 8
-        echo "
-    <h2 class=\"section-heading\">Quiz questions:</h2>
+        // line 11
+        echo "    <h2 class=\"section-heading\">Quiz questions:</h2>
         
                 
             ";
-        // line 12
-        $this->loadTemplate("QuizzeroQuizBundle:Question:index.html.twig", "QuizzeroQuizBundle:Quiz:show.html.twig", 12)->display(array_merge($context, array("questions" => (isset($context["questions"]) ? $context["questions"] : null))));
-        // line 13
+        // line 14
+        $this->loadTemplate("QuizzeroQuizBundle:Question:index.html.twig", "QuizzeroQuizBundle:Quiz:show.html.twig", 14)->display(array_merge($context, array("form" => (isset($context["form"]) ? $context["form"] : null))));
+        // line 15
         echo "    
 
 
@@ -78,7 +86,7 @@ class __TwigTemplate_9e46a1e8dcfd4c84137c7fdbc63b953057b69ff94d877cfffd42dd55191
 
     public function getDebugInfo()
     {
-        return array (  60 => 13,  58 => 12,  52 => 8,  49 => 7,  43 => 6,  37 => 5,  31 => 4,  11 => 2,);
+        return array (  68 => 15,  66 => 14,  61 => 11,  58 => 10,  53 => 8,  47 => 7,  43 => 6,  37 => 5,  31 => 4,  11 => 2,);
     }
 }
 /* {# src/Quizzero/QuizBundle/Resouces/views/Quiz/show.html.twig #}*/
@@ -86,13 +94,15 @@ class __TwigTemplate_9e46a1e8dcfd4c84137c7fdbc63b953057b69ff94d877cfffd42dd55191
 /* */
 /* {% block header_title %}{{ quiz.title }}{% endblock %}*/
 /* {% block header_subtitle %}{{ quiz.body }}{% endblock %}*/
-/* {% block header_image %}{{ asset(['img/upload/', quiz.image]|join) }}{% endblock %}*/
-/* {% block body %}*/
+/* {% block header_image %}{% if quiz.image %}*/
+/* 		{{ asset(['img/upload/', quiz.image]|join) }}*/
+/* 	{% else %}/img/home-bg.jpg{% endif %}{% endblock %}*/
 /* */
+/* {% block body %}*/
 /*     <h2 class="section-heading">Quiz questions:</h2>*/
 /*         */
 /*                 */
-/*             {% include 'QuizzeroQuizBundle:Question:index.html.twig' with { 'questions': questions } %}*/
+/*             {% include 'QuizzeroQuizBundle:Question:index.html.twig' with { 'form': form } %}*/
 /*     */
 /* */
 /* */

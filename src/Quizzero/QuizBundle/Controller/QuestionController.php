@@ -1,5 +1,5 @@
 <?php
-
+/*Render Quiz list on main page*/
 namespace Quizzero\QuizBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
@@ -62,13 +62,12 @@ class QuestionController extends Controller
             $em->persist($question);
             $em->flush();
             $quiz = $question -> getQuiz();
-            return $this->redirectToRoute('quizlink_edit', array('id' => $quiz->getId()));
+            return $this->redirectToRoute('quizlink_edit', array('id' => $quiz->getId(),));
         }
 
         return $this->render('QuizzeroQuizBundle:Question:admin_edit.html.twig', array(
             'question' => $question,
             'question_edit_form' => $QuestionEditForm->createView(),
-            
         ));
     }
 
@@ -98,13 +97,7 @@ class QuestionController extends Controller
               // Generate a unique name for the file before saving it
               $fileName = md5(uniqid()).'.'.$file->guessExtension();
               
-              // Move the file to the directory where brochures are stored
-              $file->move(
-                  $this->getParameter('images_directory'),
-                  $fileName
-              );
-
-              
+              $file->move($this->getParameter('images_directory'), $fileName);
             }
 
             $question->setImage($fileName);
@@ -139,7 +132,7 @@ class QuestionController extends Controller
         $em->flush();
         
         return $this->redirectToRoute('quizlink_edit', array('id' => $quiz->getId()));
-        //return $this->redirectToRoute('questionlink_index');
+        
     }
 
 

@@ -44,12 +44,13 @@ class QuizController extends Controller
             $result = new Result();
           
             $variants = json_decode($question->getVariates());
+            $vari = array();
             $vari = $question->getType();
-
-            for ($i = 0; $i < count($variants); ++$i){
-                $tmp = get_object_vars($variants[$i]);
-                $vari .= ";".$tmp['value'];
-            }
+            if (is_array($variants))
+              for ($i = 0; $i < count($variants); ++$i){
+                  $tmp = get_object_vars($variants[$i]);
+                  $vari .= ";".$tmp['value'];
+              }
 
             if ($question->getType() == 'checkbox')
                 $vari = explode(";", $vari);
@@ -60,26 +61,21 @@ class QuizController extends Controller
             $quiz->addResult($result);
         }
         
-        $form = $this->createForm('Quizzero\QuizBundle\Form\QuizType', $quiz)
-          ->add('save', SubmitType::class, array('label' => 'Get your result'))
-          ->add('quiz', HiddenType::class, array(
-                "mapped" => false, 'data' => $quiz->getId()));
+        $form = $this->createForm('Quizzero\QuizBundle\Form\QuizType',  $quiz)
+          ->add('save',  SubmitType::class, array('label' => 'Get your result', ))
+          ->add('quiz',  HiddenType::class, array(
+                "mapped" => false,  'data' => $quiz->getId(), ));
         $form->handleRequest($request);
 
-        
-        
-
-
-       if ($form->isSubmitted()) {
-
-          return $this->redirectToRoute('result_new', ['request' => $request], 307);  //Write quiz results to DB
+        if ($form->isSubmitted()) 
+            return $this->redirectToRoute('result_new', ['request' => $request], 307);  //Write quiz results to DB
          
-       }
+ 
 
         return $this->render('QuizzeroQuizBundle:Quiz:show.html.twig', array(
-            'quiz'      => $quiz,
-            'questions' => $questions,
-            'form' => $form->createView()
+            'quiz'      => $quiz, 
+            'questions' => $questions, 
+            'form' => $form->createView(), 
         ));
     }
 
@@ -87,7 +83,7 @@ class QuizController extends Controller
     /**
      * Lists all Quiz entities.
      *
-     * @Route("/", name="quizlink_index")
+     * @Route("/",  name="quizlink_index")
      * @Method("GET")
      */
     public function indexAction()
@@ -96,8 +92,8 @@ class QuizController extends Controller
 
         $quizzes = $em->getRepository('QuizzeroQuizBundle:Quiz')->findAll();
 
-        return $this->render('QuizzeroQuizBundle:Quiz:admin_index.html.twig', array(
-            'quizzes' => $quizzes,
+        return $this->render('QuizzeroQuizBundle:Quiz:admin_index.html.twig',  array(
+            'quizzes' => $quizzes, 
         ));
     }
 
@@ -113,7 +109,6 @@ class QuizController extends Controller
         $form = $this->createForm('Quizzero\QuizBundle\Form\AdminQuizType', $quiz);
         $form->handleRequest($request);
 
-
         if ($form->isSubmitted() && $form->isValid()) {
 
             // $file stores the uploaded file
@@ -124,7 +119,7 @@ class QuizController extends Controller
               $fileName = md5(uniqid()).'.'.$file->guessExtension();
               // Move the file to the directory where brochures are stored
               $file->move(
-                  $this->getParameter('images_directory'),
+                  $this->getParameter('images_directory'), 
                   $fileName
               );
               
@@ -135,16 +130,13 @@ class QuizController extends Controller
             $em->persist($quiz);
             $em->flush();
 
-            return $this->redirectToRoute('quizlink_edit', array('id' => $quiz->getId()));
+            return $this->redirectToRoute('quizlink_edit', array('id' => $quiz->getId(), ));
         }
 
         return $this->render('QuizzeroQuizBundle:Quiz:admin_new.html.twig', array(
-            'quiz' => $quiz,
-            'form' => $form->createView(),
+            'quiz' => $quiz, 
+            'form' => $form->createView(), 
         ));
-
-
-
     }
 
     /**
@@ -155,12 +147,8 @@ class QuizController extends Controller
      */
     public function showAction(Quiz $quiz)
     {
-        
-
         return $this->render('QuizzeroQuizBundle:Quiz:admin_show.html.twig', array(
-            'quiz' => $quiz,
-           
-        ));
+            'quiz' => $quiz, ));
     }
 
     /**
@@ -201,11 +189,9 @@ class QuizController extends Controller
               
               // Move the file to the directory where brochures are stored
               $file->move(
-                  $this->getParameter('images_directory'),
+                  $this->getParameter('images_directory'), 
                   $fileName
-              );
-
-              
+              );        
             }
     
             // instead of its contents
@@ -214,21 +200,19 @@ class QuizController extends Controller
             $em->persist($quiz);
             $em->flush();
 
-            return $this->redirectToRoute('quizlink_edit', array('id' => $quiz->getId()));
+            return $this->redirectToRoute('quizlink_edit',  array('id' => $quiz->getId(), 
+                ));
         }
-
 
         $questions = $em->getRepository('QuizzeroQuizBundle:Question')
                   ->getQuestionsForQuiz($quiz->getId());
 
-
         return $this->render('QuizzeroQuizBundle:Quiz:admin_edit.html.twig', array(
-            'quiz' => $quiz,
-            'questions' => $questions,
-            'quiz_edit_form' => $QuizEditForm->createView(),
-            'question_edit_form' => $QuestionEditForm->createView(),
-        
-        ));
+                  'quiz' => $quiz, 
+                  'questions' => $questions, 
+                  'quiz_edit_form' => $QuizEditForm->createView(), 
+                  'question_edit_form' => $QuestionEditForm->createView(),    
+              ));
     }
 
     /**

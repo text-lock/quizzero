@@ -64,10 +64,10 @@ class Result extends \Quizzero\QuizBundle\Entity\Result implements \Doctrine\ORM
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'Quizzero\\QuizBundle\\Entity\\Result' . "\0" . 'id', '' . "\0" . 'Quizzero\\QuizBundle\\Entity\\Result' . "\0" . 'user', '' . "\0" . 'Quizzero\\QuizBundle\\Entity\\Result' . "\0" . 'quiz_session', '' . "\0" . 'Quizzero\\QuizBundle\\Entity\\Result' . "\0" . 'quiz', '' . "\0" . 'Quizzero\\QuizBundle\\Entity\\Result' . "\0" . 'question', '' . "\0" . 'Quizzero\\QuizBundle\\Entity\\Result' . "\0" . 'answer', '' . "\0" . 'Quizzero\\QuizBundle\\Entity\\Result' . "\0" . 'correct', '' . "\0" . 'Quizzero\\QuizBundle\\Entity\\Result' . "\0" . 'is_correct', '' . "\0" . 'Quizzero\\QuizBundle\\Entity\\Result' . "\0" . 'created_at'];
+            return ['__isInitialized__', '' . "\0" . 'Quizzero\\QuizBundle\\Entity\\Result' . "\0" . 'id', '' . "\0" . 'Quizzero\\QuizBundle\\Entity\\Result' . "\0" . 'user', '' . "\0" . 'Quizzero\\QuizBundle\\Entity\\Result' . "\0" . 'quiz_session', '' . "\0" . 'Quizzero\\QuizBundle\\Entity\\Result' . "\0" . 'quiz', '' . "\0" . 'Quizzero\\QuizBundle\\Entity\\Result' . "\0" . 'question', '' . "\0" . 'Quizzero\\QuizBundle\\Entity\\Result' . "\0" . 'answer', '' . "\0" . 'Quizzero\\QuizBundle\\Entity\\Result' . "\0" . 'is_correct', '' . "\0" . 'Quizzero\\QuizBundle\\Entity\\Result' . "\0" . 'created_at'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'Quizzero\\QuizBundle\\Entity\\Result' . "\0" . 'id', '' . "\0" . 'Quizzero\\QuizBundle\\Entity\\Result' . "\0" . 'user', '' . "\0" . 'Quizzero\\QuizBundle\\Entity\\Result' . "\0" . 'quiz_session', '' . "\0" . 'Quizzero\\QuizBundle\\Entity\\Result' . "\0" . 'quiz', '' . "\0" . 'Quizzero\\QuizBundle\\Entity\\Result' . "\0" . 'question', '' . "\0" . 'Quizzero\\QuizBundle\\Entity\\Result' . "\0" . 'answer', '' . "\0" . 'Quizzero\\QuizBundle\\Entity\\Result' . "\0" . 'correct', '' . "\0" . 'Quizzero\\QuizBundle\\Entity\\Result' . "\0" . 'is_correct', '' . "\0" . 'Quizzero\\QuizBundle\\Entity\\Result' . "\0" . 'created_at'];
+        return ['__isInitialized__', '' . "\0" . 'Quizzero\\QuizBundle\\Entity\\Result' . "\0" . 'id', '' . "\0" . 'Quizzero\\QuizBundle\\Entity\\Result' . "\0" . 'user', '' . "\0" . 'Quizzero\\QuizBundle\\Entity\\Result' . "\0" . 'quiz_session', '' . "\0" . 'Quizzero\\QuizBundle\\Entity\\Result' . "\0" . 'quiz', '' . "\0" . 'Quizzero\\QuizBundle\\Entity\\Result' . "\0" . 'question', '' . "\0" . 'Quizzero\\QuizBundle\\Entity\\Result' . "\0" . 'answer', '' . "\0" . 'Quizzero\\QuizBundle\\Entity\\Result' . "\0" . 'is_correct', '' . "\0" . 'Quizzero\\QuizBundle\\Entity\\Result' . "\0" . 'created_at'];
     }
 
     /**
@@ -340,6 +340,28 @@ class Result extends \Quizzero\QuizBundle\Entity\Result implements \Doctrine\ORM
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getCorrect', []);
 
         return parent::getCorrect();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setUser(\Quizzero\QuizBundle\Entity\User $user = NULL)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setUser', [$user]);
+
+        return parent::setUser($user);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getUser()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUser', []);
+
+        return parent::getUser();
     }
 
 }

@@ -26,7 +26,7 @@ class Result
     
     /**
      * @ORM\ManyToOne(targetEntity="User", inversedBy="results")
-     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id", onDelete="SET NULL")
      */
     private $user;
 
@@ -39,14 +39,14 @@ class Result
 
      /**
      * @ORM\ManyToOne(targetEntity="Quiz", inversedBy="results")
-     * @ORM\JoinColumn(name="quiz_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="quiz_id", referencedColumnName="id", onDelete="SET NULL")
      * @Assert\NotBlank(message="Missed quiz assign")
      */
     private $quiz;
 
     /**
      * @ORM\ManyToOne(targetEntity="Question", inversedBy="results")
-     * @ORM\JoinColumn(name="question_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="question_id", referencedColumnName="id", onDelete="SET NULL")
      * @Assert\NotBlank(message="Missed question assign")
      */
     private $question;

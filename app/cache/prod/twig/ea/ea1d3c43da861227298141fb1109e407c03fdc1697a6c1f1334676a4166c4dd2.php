@@ -29,7 +29,10 @@ class __TwigTemplate_a294f4feb2646f84d8785ec000da5a73cd791461b457e353afa01bcac6a
     {
         // line 5
         echo "\t";
-        $this->loadTemplate("QuizzeroQuizBundle:Question:admin_form.html.twig", "QuizzeroQuizBundle:Question:admin_edit.html.twig", 5)->display($context);
+        $this->loadTemplate("QuizzeroQuizBundle::user.layout.html.twig", "QuizzeroQuizBundle:Question:admin_edit.html.twig", 5)->display($context);
+        // line 6
+        echo "\t";
+        $this->loadTemplate("QuizzeroQuizBundle:Question:admin_form.html.twig", "QuizzeroQuizBundle:Question:admin_edit.html.twig", 6)->display($context);
     }
 
     public function getTemplateName()
@@ -44,13 +47,14 @@ class __TwigTemplate_a294f4feb2646f84d8785ec000da5a73cd791461b457e353afa01bcac6a
 
     public function getDebugInfo()
     {
-        return array (  31 => 5,  28 => 4,  11 => 1,);
+        return array (  34 => 6,  31 => 5,  28 => 4,  11 => 1,);
     }
 }
 /* {% extends 'QuizzeroQuizBundle::layout.html.twig' %}*/
 /* */
 /*  	*/
 /* {% block body %}*/
+/* 	{% include 'QuizzeroQuizBundle::user.layout.html.twig' %}*/
 /* 	{% include 'QuizzeroQuizBundle:Question:admin_form.html.twig' %}*/
 /* {% endblock %}*/
 /*     */

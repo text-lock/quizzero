@@ -18,7 +18,7 @@ class QuizType extends AbstractType
     {
     	
         $builder->add('results', CollectionType::class, array(
-            'entry_type' => ResultType::class
+            'entry_type' => ResultType::class, 
         ));
         
     }
@@ -26,7 +26,7 @@ class QuizType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-           'data_class' => 'Quizzero\QuizBundle\Entity\Quiz',
+            'data_class' => 'Quizzero\QuizBundle\Entity\Quiz',
             'validation_groups' => false,
         ));
     }

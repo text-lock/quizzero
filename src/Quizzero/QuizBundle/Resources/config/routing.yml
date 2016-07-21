@@ -15,9 +15,3 @@ QuizzeroQuizBundle_user_index:
     defaults: { _controller: "QuizzeroQuizBundle:User:show" }
     requirements:
          methods:  GET
-
-QuizzeroQuizBundle_user_result_show:
-    path:     /user/result/{id}
-    defaults: { _controller: "QuizzeroQuizBundle:Result:show" }
-    requirements:
-         methods:  GET

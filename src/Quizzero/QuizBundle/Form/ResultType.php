@@ -35,19 +35,15 @@ class ResultType extends AbstractType
             $form = $event->getForm();
             $answer = $result->getAnswer();
  
-            if(!is_array($answer)){ 
-                $answer = explode(";", $answer);
-           
-            }
-
+            if(!is_array($answer)) $answer = explode(";", $answer);
+            
             $q_type = $answer[0];
             unset($answer[0]);
             $answer = array_combine($answer, $answer);
 
             $form->add('question');
 
-            
-           if($q_type == "radio"){
+            if($q_type == "radio"){
                 $form->add('answer', ChoiceType::class, array(
                     'choices' => $answer,
                     'multiple' => false,
@@ -66,17 +62,15 @@ class ResultType extends AbstractType
             elseif($q_type == "textarea"){   
                 $form->add('answer','textarea',array(
                     'data' => '', 
-                    'required'=>false));
+                    'required'=>false, ));
             }
             elseif($q_type == "text"){
                $form->add('answer','text',array(
                     'data' => '',
-                    'required'=>false));
+                    'required'=>false, ));
             }
-
-            
+         
         });   
-
 
     }
 

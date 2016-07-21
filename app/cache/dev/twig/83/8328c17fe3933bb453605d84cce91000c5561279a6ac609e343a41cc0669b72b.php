@@ -21,20 +21,20 @@ class __TwigTemplate_06a2d68dfa92e5195ad09a65d0a5a21019241ab9700f5f82f56c7adc0a0
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_a194774c39f73d1ab1f0991698129e5e38f23623872befa1af62fd7ce3df6451 = $this->env->getExtension("native_profiler");
-        $__internal_a194774c39f73d1ab1f0991698129e5e38f23623872befa1af62fd7ce3df6451->enter($__internal_a194774c39f73d1ab1f0991698129e5e38f23623872befa1af62fd7ce3df6451_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "QuizzeroQuizBundle:User:show.html.twig"));
+        $__internal_83b662a899afb104b2aaf310adc5168ce9eaa8d69a4e39e2ecf854f5a36d90b7 = $this->env->getExtension("native_profiler");
+        $__internal_83b662a899afb104b2aaf310adc5168ce9eaa8d69a4e39e2ecf854f5a36d90b7->enter($__internal_83b662a899afb104b2aaf310adc5168ce9eaa8d69a4e39e2ecf854f5a36d90b7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "QuizzeroQuizBundle:User:show.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_a194774c39f73d1ab1f0991698129e5e38f23623872befa1af62fd7ce3df6451->leave($__internal_a194774c39f73d1ab1f0991698129e5e38f23623872befa1af62fd7ce3df6451_prof);
+        $__internal_83b662a899afb104b2aaf310adc5168ce9eaa8d69a4e39e2ecf854f5a36d90b7->leave($__internal_83b662a899afb104b2aaf310adc5168ce9eaa8d69a4e39e2ecf854f5a36d90b7_prof);
 
     }
 
     // line 3
     public function block_body($context, array $blocks = array())
     {
-        $__internal_d435d631071717ed94bd072191d9a74390005e4c8b7b6b39a643c5f29368a9c5 = $this->env->getExtension("native_profiler");
-        $__internal_d435d631071717ed94bd072191d9a74390005e4c8b7b6b39a643c5f29368a9c5->enter($__internal_d435d631071717ed94bd072191d9a74390005e4c8b7b6b39a643c5f29368a9c5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_1df881954b7b517e422332ffd1e10102d66ba22d85bf22422d511954b3588bdc = $this->env->getExtension("native_profiler");
+        $__internal_1df881954b7b517e422332ffd1e10102d66ba22d85bf22422d511954b3588bdc->enter($__internal_1df881954b7b517e422332ffd1e10102d66ba22d85bf22422d511954b3588bdc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
         echo "\t";
@@ -73,7 +73,7 @@ class __TwigTemplate_06a2d68dfa92e5195ad09a65d0a5a21019241ab9700f5f82f56c7adc0a0
 \t\t\t\t<td><a href=\"\">
 \t\t\t\t<a href=\"";
             // line 26
-            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("QuizzeroQuizBundle_user_result_show", array("id" => $this->getAttribute($context["result"], "quizSession", array()))), "html", null, true);
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("result_show", array("id" => $this->getAttribute($context["result"], "quizSession", array()))), "html", null, true);
             echo "\">
 \t\t\t\t";
             // line 27
@@ -91,7 +91,7 @@ class __TwigTemplate_06a2d68dfa92e5195ad09a65d0a5a21019241ab9700f5f82f56c7adc0a0
     </table>
 ";
         
-        $__internal_d435d631071717ed94bd072191d9a74390005e4c8b7b6b39a643c5f29368a9c5->leave($__internal_d435d631071717ed94bd072191d9a74390005e4c8b7b6b39a643c5f29368a9c5_prof);
+        $__internal_1df881954b7b517e422332ffd1e10102d66ba22d85bf22422d511954b3588bdc->leave($__internal_1df881954b7b517e422332ffd1e10102d66ba22d85bf22422d511954b3588bdc_prof);
 
     }
 
@@ -135,7 +135,7 @@ class __TwigTemplate_06a2d68dfa92e5195ad09a65d0a5a21019241ab9700f5f82f56c7adc0a0
 /* 				*/
 /* 				</td>*/
 /* 				<td><a href="">*/
-/* 				<a href="{{ path('QuizzeroQuizBundle_user_result_show', { 'id': result.quizSession }) }}">*/
+/* 				<a href="{{ path('result_show', { 'id': result.quizSession }) }}">*/
 /* 				{{result.quiz.title}}</a></td>*/
 /*                 				*/
 /*             </tr>*/
